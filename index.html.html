@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tschick (Goodbye Berlin)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+
+        .book-info, .characters {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .book-info:hover, .characters:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #34495e;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #666;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .header {
+                padding: 20px;
+            }
+            .book-info, .characters {
+                padding: 20px;
+            }
+        }
+
+        .character-main {
+            background-color: #e8f4fc;
+            border-left: 4px solid #2980b9;
+            padding: 20px;
+        }
+        
+        .characters li {
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .characters li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .character-quotes {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f1f9ff;
+            border-radius: 8px;
+        }
+        
+        .character-quotes h4 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        .character-quotes .quote {
+            margin: 10px 0;
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 6px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .character-details {
+            margin-top: 20px;
+        }
+        
+        .traits-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .traits-list li {
+            background-color: #e8f4fc;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin: 0;
+            border: none;
+        }
+        
+        .character-main {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2980b9;
+            padding: 25px;
+        }
+        
+        .character-main p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .character-development {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .character-development h4 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .character-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .character-link:hover {
+            background-color: #2980b9;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Tschick (Goodbye Berlin)</h1>
+            <p>von Wolfgang Herrndorf</p>
+        </div>
+
+        <div class="book-info">
+            <h2>Über das Buch</h2>
+            <p>
+                "Tschick" ist ein deutscher Jugendroman aus dem Jahr 2010, der von einer 
+                unvergesslichen Sommerreise zweier 14-jähriger Außenseiter erzählt. 
+                Der Roman wurde zu einem internationalen Bestseller und in mehrere Sprachen übersetzt.
+            </p>
+            
+            <div class="quote">
+                "Das war der Sommer, in dem ich zum ersten Mal verliebt war und zum ersten Mal jemand 
+                versuchte, mich umzubringen. Ich war vierzehn."
+            </div>
+            
+            <h3>Handlung</h3>
+            <p>
+                Maik Klingenberg, ein 14-jähriger Junge aus Berlin, und sein neuer 
+                Klassenkamerad Andrej Tschichatschow (genannt "Tschick") stehlen einen 
+                alten Lada und begeben sich auf eine abenteuerliche Reise durch 
+                Ostdeutschland. Ohne konkretes Ziel erleben sie einen Sommer voller 
+                Freiheit, unerwarteter Begegnungen und Selbstentdeckung.
+            </p>
+        </div>
+
+        <div class="characters">
+            <h2>Hauptfiguren</h2>
+            <ul>
+                <li class="character-main">
+                    <strong>Maik Klingenberg:</strong>
+                    <p>Ein 14-jähriger Junge aus wohlhabendem Elternhaus in Berlin-Marzahn. 
+                    Trotz seiner privilegierten Herkunft fühlt er sich als Außenseiter. 
+                    In der Schule wird er von seinen Mitschülern "Psycho" genannt, weil er so 
+                    unauffällig ist, dass er praktisch unsichtbar erscheint.</p>
+
+                    <p>Seine Mutter ist Alkoholikerin und verbringt regelmäßig Zeit in einer 
+                    "Schönheitsfarm" (Entzugsklinik), während sein Vater, ein gescheiterter 
+                    Immobilienunternehmer, oft auf Geschäftsreisen ist. Diese familiäre 
+                    Situation prägt Maiks zurückhaltendes und unsicheres Wesen.</p>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <a href="maik-character.html" class="character-link">
+                            Mehr über Maik erfahren →
+                        </a>
+                    </div>
+                </li>
+                    
+                <li class="character-main">
+                    <strong>Andrej Tschichatschow (Tschick):</strong> 
+                    <p>Ein 14-jähriger Spätaussiedler aus Russland. Er ist rebellisch, selbstbewusst und 
+                    unkonventionell. Trotz seiner schwierigen Familienverhältnisse und seiner 
+                    Außenseiterrolle behält er stets seine eigenwillige Art bei. Er erscheint oft betrunken 
+                    zum Unterricht, ist aber hochintelligent und ein begnadeter Autodieb.</p>
+                    
+                    <p>Mit seiner direkten Art und seinem unerschütterlichen Selbstbewusstsein 
+                    verändert er Maiks Leben grundlegend. Seine asiatischen Gesichtszüge und sein 
+                    ungewöhnliches Auftreten machen ihn zu einer auffälligen Erscheinung in der Klasse.</p>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <a href="tschick-character.html" class="character-link">
+                            Mehr über Tschick erfahren →
+                        </a>
+                    </div>
+                </li>
+                    
+                <li class="character-main">
+                    <strong>Isa Schmidt:</strong>
+                    <p>Ein mysteriöses Mädchen, das die Jungen auf einer Müllhalde in der Nähe von 
+                    Leipzig treffen. Sie lebt scheinbar allein zwischen Bergen von Müll, ist aber 
+                    erstaunlich selbstständig und lebensklug. Ihre wahre Geschichte und Herkunft 
+                    bleiben teilweise im Dunkeln.</p>
+
+                    <p>Trotz ihrer rauen Lebensumstände ist sie gebildet und spricht perfektes 
+                    Hochdeutsch. Sie wird zu einer wichtigen Begegnung auf der Reise der beiden 
+                    Jungen und hinterlässt besonders bei Maik einen bleibenden Eindruck.</p>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <a href="isa-character.html" class="character-link">
+                            Mehr über Isa erfahren →
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

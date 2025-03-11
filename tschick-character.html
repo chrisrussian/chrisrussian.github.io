@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrej Tschichatschow - Tschick</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .character-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .character-header {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .character-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .character-header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .quote-container {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #666;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .traits-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .traits-list li {
+            background-color: #e8f4fc;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+
+        .story-moments {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #2980b9;
+            transform: translateX(-5px);
+        }
+
+        /* Новый стиль для верхней навигации */
+        .section:nth-child(2) .nav-button {
+            margin-top: 0;
+            background-color: rgba(52, 152, 219, 0.9);
+            font-size: 0.9em;
+        }
+
+        /* Добавим новые стили */
+        .character-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .additional-info {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            border-left: 3px solid #3498db;
+            margin-left: 20px;
+            position: relative;
+            background-color: white;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 24px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="character-card">
+            <div class="character-header">
+                <h1>Andrej Tschichatschow</h1>
+                <p>"Tschick"</p>
+            </div>
+
+            <div class="section" style="text-align: center; border-bottom: none; padding: 15px;">
+                <a href="tsick.html" class="nav-button">← Zurück zur Übersicht</a>
+            </div>
+
+            <div class="section">
+                <h2>Charakter & Persönlichkeit</h2>
+                <img src="images/tschick.jpg" alt="Andrej Tschichatschow" class="character-image">
+                <p class="image-caption">Szene aus der Verfilmung: Anand Batbileg als Tschick (2016)</p>
+                
+                <p>Ein 14-jähriger Spätaussiedler aus Russland mit asiatischen Gesichtszügen. 
+                Tschick ist ein faszinierender Charakter, der trotz oder gerade wegen seiner 
+                Außenseiterrolle eine bemerkenswerte Stärke und Authentizität ausstrahlt.</p>
+                
+                <p>Er kommt aus schwierigen Familienverhältnissen, lebt bei seinem Bruder und 
+                erscheint oft betrunken zum Unterricht. Dennoch zeigt er eine bemerkenswerte 
+                Intelligenz und Weltgewandtheit.</p>
+            </div>
+
+            <div class="section">
+                <h2>Hintergrund & Familie</h2>
+                <div class="additional-info">
+                    <h3>Familiäre Situation</h3>
+                    <p>Tschick stammt aus einer russlanddeutschen Familie. Er lebt mit seinem 
+                    älteren Bruder in einem Hochhaus in Hellersdorf, einem Berliner Randbezirk. 
+                    Seine Mutter ist verschwunden, sein Vater sitzt im Gefängnis.</p>
+
+                    <h3>Kultureller Hintergrund</h3>
+                    <p>Als Spätaussiedler verkörpert Tschick die Erfahrungen vieler 
+                    Migrantenkinder in Deutschland. Seine asiatischen Gesichtszüge und sein 
+                    russischer Hintergrund machen ihn zu einem Außenseiter, doch er nutzt 
+                    diese Position, um sich über gesellschaftliche Konventionen hinwegzusetzen.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Schlüsselszenen im Buch</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Erster Schultag</h3>
+                        <p>Tschick erscheint betrunken zum Unterricht und erregt sofort Aufsehen. 
+                        Trotz seines fragwürdigen Auftretens zeigt er bereits hier seine 
+                        Intelligenz und Unbekümmertheit.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Der Autodiebstahl</h3>
+                        <p>Mit erstaunlicher Gelassenheit stiehlt er einen alten Lada und 
+                        überzeugt den zögerlichen Maik von ihrer Reiseidee. Diese Szene zeigt 
+                        seine Spontaneität und seinen Mut.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Begegnung mit der Polizei</h3>
+                        <p>Seine Reaktion auf die Verfolgungsjagd zeigt seine Kaltblütigkeit 
+                        und gleichzeitig seine Verantwortung gegenüber Maik.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Beziehungen zu anderen Charakteren</h2>
+                <div class="relationships">
+                    <h3>Maik Klingenberg</h3>
+                    <p>Die ungewöhnliche Freundschaft zu Maik ist das Herzstück der Geschichte. 
+                    Tschick sieht in Maik einen Verbündeten, während er für Maik der Katalysator 
+                    für Veränderung wird.</p>
+
+                    <h3>Isa Schmidt</h3>
+                    <p>Die Begegnung mit Isa zeigt eine andere Seite von Tschick. Er begegnet 
+                    ihr mit Respekt und Neugierde, ohne seine typische Überheblichkeit.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Markante Zitate</h2>
+                <div class="quote-container">
+                    <div class="quote">
+                        "Ist doch egal, was die Leute denken. Die denken sowieso, was sie wollen."
+                    </div>
+                    <div class="quote">
+                        "Ein Auto zu klauen ist wie Fahrradfahren. Das verlernt man nicht."
+                    </div>
+                    <div class="quote">
+                        "Wenn man mit dem Auto aus Berlin rausfährt, ist man sofort in der Walachei."
+                    </div>
+                    <div class="quote">
+                        "Du siehst aus, als hätten sie dich grade aus'm Gefängnis entlassen."
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Charaktereigenschaften</h2>
+                <ul class="traits-list">
+                    <li>Mutig und furchtlos</li>
+                    <li>Intelligent und einfallsreich</li>
+                    <li>Loyal gegenüber Freunden</li>
+                    <li>Nonkonformistisch</li>
+                    <li>Direkt und ehrlich</li>
+                    <li>Unkonventionell</li>
+                    <li>Selbstbewusst</li>
+                    <li>Abenteuerlustig</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Schlüsselmomente</h2>
+                <div class="story-moments">
+                    <h3>Erste Begegnung mit Maik</h3>
+                    <p>Tschick erscheint als neuer Schüler in der Klasse, zunächst von allen gemieden 
+                    und oft betrunken im Unterricht.</p>
+
+                    <h3>Der Autodiebstahl</h3>
+                    <p>Er stiehlt einen alten Lada und überzeugt Maik zu einer spontanen Reise durch 
+                    Ostdeutschland.</p>
+
+                    <h3>Die Reise</h3>
+                    <p>Während der Reise zeigt sich seine wahre Persönlichkeit: ein loyaler Freund 
+                    mit einem starken Gerechtigkeitssinn und der Fähigkeit, das Beste aus jeder 
+                    Situation zu machen.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Bedeutung für die Geschichte</h2>
+                <p>Tschick ist der Katalysator für Maiks Entwicklung und die gesamte Handlung. 
+                Seine unkonventionelle Art und sein Mut, gegen gesellschaftliche Normen zu 
+                verstoßen, ermöglichen erst das zentrale Abenteuer des Romans. Er zeigt Maik, 
+                dass man sein Leben selbst in die Hand nehmen kann und dass Anderssein keine 
+                Schwäche ist.</p>
+            </div>
+
+            <div class="section" style="text-align: center;">
+                <a href="tsick.html" class="nav-button">Zurück zur Hauptseite</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maik Klingenberg - Tschick</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .character-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .character-header {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .character-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .character-header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .quote-container {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #666;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .traits-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .traits-list li {
+            background-color: #e8f4fc;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+
+        .story-moments {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #2980b9;
+            transform: translateX(-5px);
+        }
+
+        .section:nth-child(2) .nav-button {
+            margin-top: 0;
+            background-color: rgba(52, 152, 219, 0.9);
+            font-size: 0.9em;
+        }
+
+        .character-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+
+        .additional-info {
+            margin-top: 20px;
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            flex: 1;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .relationships {
+            margin-top: 20px;
+        }
+
+        .relationships h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .relationships p {
+            margin: 10px 0;
+        }
+
+        /* Новые стили для улучшения дизайна */
+        .section {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .character-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .character-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .timeline-item {
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .additional-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .additional-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .quote-container {
+            background: linear-gradient(135deg, #f1f9ff 0%, #ffffff 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .quote {
+            position: relative;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .quote:hover {
+            transform: translateX(10px);
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            left: -15px;
+            top: 10px;
+            font-size: 40px;
+            color: #3498db;
+            opacity: 0.5;
+        }
+
+        .traits-list li {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: default;
+        }
+
+        .traits-list li:hover {
+            transform: translateY(-3px);
+            background-color: #d4e9f7;
+        }
+
+        .relationships {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .relationships h3 {
+            color: #2c3e50;
+            margin: 20px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .relationships p {
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .relationships p:hover {
+            transform: translateX(10px);
+        }
+
+        /* Улучшенная навигация */
+        .nav-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #2980b9;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-button:hover::before {
+            width: 100%;
+        }
+
+        /* Адаптивный дизайн */
+        @media (max-width: 768px) {
+            .character-image {
+                height: 300px;
+            }
+
+            .timeline-item {
+                margin-left: 0;
+            }
+
+            .quote::before {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="character-card">
+            <div class="character-header">
+                <h1>Maik Klingenberg</h1>
+                <p>"Der Erzähler"</p>
+            </div>
+
+            <div class="section" style="text-align: center; border-bottom: none; padding: 15px;">
+                <a href="tsick.html" class="nav-button">← Zurück zur Übersicht</a>
+            </div>
+
+            <div class="section">
+                <h2>Charakter & Persönlichkeit</h2>
+                <img src="images/maik.jpg" alt="Maik Klingenberg" class="character-image">
+                <p class="image-caption">Szene aus der Verfilmung: Tristan Göbel als Maik (2016)</p>
+                
+                <p>Ein 14-jähriger Junge aus wohlhabendem Elternhaus in Berlin-Marzahn. In der 
+                Schule wird er "Psycho" genannt, weil er so unauffällig ist, dass er praktisch 
+                unsichtbar erscheint. Er ist der Ich-Erzähler der Geschichte und durchlebt 
+                während des Sommers eine bemerkenswerte Entwicklung.</p>
+                
+                <p>Maik stammt aus einer dysfunktionalen Familie: Seine Mutter ist Alkoholikerin 
+                und verbringt regelmäßig Zeit in einer "Schönheitsfarm" (Entzugsklinik), sein 
+                Vater ist ein gescheiterter Immobilienunternehmer, der sich kaum um ihn kümmert.</p>
+            </div>
+
+            <div class="section">
+                <h2>Hintergrund & Familie</h2>
+                <div class="additional-info">
+                    <h3>Familiäre Situation</h3>
+                    <p>Maik stammt aus einer wohlhabenden, aber dysfunktionalen Familie. Seine 
+                    Mutter ist Alkoholikerin und verbringt regelmäßig Zeit in einer "Schönheitsfarm" 
+                    (Entzugsklinik). Sein Vater, ein gescheiterter Immobilienunternehmer, ist oft 
+                    abwesend und zeigt wenig Interesse an seinem Sohn.</p>
+
+                    <h3>Soziales Umfeld</h3>
+                    <p>In der Schule ist Maik ein Außenseiter, der von seinen Mitschülern "Psycho" 
+                    genannt wird. Er lebt in einer Villa in Berlin-Marzahn, was den Kontrast 
+                    zwischen materiellem Wohlstand und emotionaler Armut verdeutlicht.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Schlüsselszenen im Buch</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Der Mutterschaftstest</h3>
+                        <p>Maiks missglückter Aufsatz über seine Mutter zeigt seine komplizierte 
+                        Beziehung zu ihr und seine Unfähigkeit, die familiären Probleme zu 
+                        verarbeiten.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Tatjanas Geburtstagsparty</h3>
+                        <p>Seine Nicht-Einladung zu Tatjanas Party symbolisiert seine soziale 
+                        Isolation und sein geringes Selbstwertgefühl.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Die Entscheidung mitzufahren</h3>
+                        <p>Der Moment, in dem er sich entschließt, mit Tschick zu fahren, 
+                        markiert den Beginn seiner Entwicklung zu mehr Selbstbestimmung.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Innere Entwicklung</h2>
+                <div class="additional-info">
+                    <h3>Vor der Reise</h3>
+                    <p>Ein unsicherer, passiver Teenager, der sich selbst als "Langweiler" 
+                    bezeichnet und unter mangelndem Selbstbewusstsein leidet.</p>
+
+                    <h3>Während der Reise</h3>
+                    <p>Entwickelt zunehmend Mut und Selbstvertrauen. Lernt, eigene 
+                    Entscheidungen zu treffen und zu seinen Gefühlen zu stehen.</p>
+
+                    <h3>Nach der Reise</h3>
+                    <p>Hat ein neues Selbstverständnis entwickelt und kann sich besser von den 
+                    Urteilen anderer distanzieren. Seine Erfahrungen haben ihn selbstbewusster 
+                    und reifer gemacht.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Beziehungen zu anderen Charakteren</h2>
+                <div class="relationships">
+                    <h3>Tschick</h3>
+                    <p>Die Freundschaft mit Tschick verändert Maiks Leben grundlegend. Tschick 
+                    wird zu seinem ersten echten Freund und zeigt ihm eine neue Perspektive 
+                    auf das Leben.</p>
+
+                    <h3>Tatjana Cosic</h3>
+                    <p>Seine unerwiderte Liebe zu Tatjana symbolisiert seine anfängliche 
+                    Sehnsucht nach Anerkennung und Zugehörigkeit.</p>
+
+                    <h3>Isa Schmidt</h3>
+                    <p>Die Begegnung mit Isa ist seine erste echte romantische Erfahrung und 
+                    hilft ihm, über seine Schwärmerei für Tatjana hinwegzukommen.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Markante Zitate</h2>
+                <div class="quote-container">
+                    <div class="quote">
+                        "Ich war nicht cool und nicht uncool. Ich war einfach gar nichts."
+                    </div>
+                    <div class="quote">
+                        "Tatjana Cosic. Wenn ich ihren Namen nur aufschreibe, krieg ich schon Herzrasen."
+                    </div>
+                    <div class="quote">
+                        "Bei meiner Mutter weiß man nie, ob sie grade sehr gut drauf ist oder 
+                        kurz vorm Selbstmord."
+                    </div>
+                    <div class="quote">
+                        "Das war der Sommer, in dem ich zum ersten Mal verliebt war und zum 
+                        ersten Mal jemand versuchte, mich umzubringen. Ich war vierzehn."
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Charaktereigenschaften</h2>
+                <ul class="traits-list">
+                    <li>Sensibel und nachdenklich</li>
+                    <li>Künstlerisch begabt</li>
+                    <li>Zurückhaltend</li>
+                    <li>Selbstzweiflerisch</li>
+                    <li>Loyal und ehrlich</li>
+                    <li>Heimlich romantisch</li>
+                    <li>Beobachtend</li>
+                    <li>Intelligent</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Schlüsselmomente</h2>
+                <div class="story-moments">
+                    <h3>Die unerwiderte Liebe zu Tatjana</h3>
+                    <p>Seine heimliche Verliebtheit in die beliebte Mitschülerin Tatjana Cosic 
+                    zeigt seine romantische, aber unsichere Seite.</p>
+
+                    <h3>Die Begegnung mit Tschick</h3>
+                    <p>Die unerwartete Freundschaft mit dem Außenseiter Tschick verändert sein 
+                    Leben und seine Sicht auf die Welt grundlegend.</p>
+
+                    <h3>Die Reise</h3>
+                    <p>Während der gemeinsamen Reise durch Ostdeutschland entdeckt Maik seine 
+                    eigene Stärke und lernt, sich selbst zu akzeptieren.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Entwicklung im Buch</h2>
+                <p>Maiks Entwicklung ist das zentrale Element der Geschichte. Er wandelt sich von 
+                einem unsicheren, passiven Teenager zu einem selbstbewussteren jungen Menschen. 
+                Durch die Freundschaft mit Tschick und die Erlebnisse während ihrer Reise lernt 
+                er, dass es wichtiger ist, authentisch zu sein als den Erwartungen anderer zu 
+                entsprechen. Seine Erfahrungen helfen ihm, seine eigene Identität zu finden und 
+                sich von den Urteilen anderer zu befreien.</p>
+            </div>
+
+            <div class="section" style="text-align: center;">
+                <a href="tsick.html" class="nav-button">Zurück zur Hauptseite</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

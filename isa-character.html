@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isa Schmidt - Tschick</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .character-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .character-header {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .character-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .character-header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .quote-container {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #666;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .traits-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .traits-list li {
+            background-color: #e8f4fc;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+
+        .story-moments {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #2980b9;
+            transform: translateX(-5px);
+        }
+
+        .section:nth-child(2) .nav-button {
+            margin-top: 0;
+            background-color: rgba(52, 152, 219, 0.9);
+            font-size: 0.9em;
+        }
+
+        .character-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+
+        .additional-info {
+            margin-top: 20px;
+        }
+
+        .timeline {
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 10px;
+        }
+
+        .relationships {
+            margin-top: 20px;
+        }
+
+        .relationships h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .relationships p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="character-card">
+            <div class="character-header">
+                <h1>Isa Schmidt</h1>
+                <p>"Das Mädchen von der Müllkippe"</p>
+            </div>
+
+            <div class="section" style="text-align: center; border-bottom: none; padding: 15px;">
+                <a href="tsick.html" class="nav-button">← Zurück zur Übersicht</a>
+            </div>
+
+            <div class="section">
+                <h2>Charakter & Persönlichkeit</h2>
+                <img src="images/isa.jpg" alt="Isa Schmidt" class="character-image">
+                <p class="image-caption">Szene aus der Verfilmung: Mercedes Müller als Isa (2016)</p>
+                
+                <p>Ein mysteriöses Mädchen, das Maik und Tschick auf ihrer Reise auf einer 
+                Müllhalde bei Leipzig treffen. Trotz ihrer ungewöhnlichen Lebensumstände 
+                ist sie selbstbewusst, intelligent und erstaunlich gebildet. Sie spricht 
+                perfektes Hochdeutsch und zeigt eine Reife, die über ihr Alter hinausgeht.</p>
+                
+                <p>Ihre wahre Geschichte und Herkunft bleiben im Roman weitgehend im Dunkeln, 
+                was ihrem Charakter eine zusätzliche Faszination verleiht. Sie verkörpert 
+                eine Art moderne Pippi Langstrumpf - unabhängig, stark und frei von 
+                gesellschaftlichen Konventionen.</p>
+            </div>
+
+            <div class="section">
+                <h2>Symbolische Bedeutung</h2>
+                <div class="additional-info">
+                    <h3>Die moderne Pippi Langstrumpf</h3>
+                    <p>Isa verkörpert das literarische Motiv des freien, unabhängigen Kindes. 
+                    Wie Pippi Langstrumpf lebt sie scheinbar ohne Erwachsene und folgt ihren 
+                    eigenen Regeln.</p>
+
+                    <h3>Das Mysterium</h3>
+                    <p>Ihre wahre Geschichte bleibt im Dunkeln, was sie zu einer 
+                    geheimnisvollen und faszinierenden Figur macht. Diese Ungewissheit 
+                    verstärkt ihre symbolische Bedeutung als Verkörperung der Freiheit.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Schlüsselszenen im Buch</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Erste Begegnung auf der Müllhalde</h3>
+                        <p>Ihr überraschendes Erscheinen und ihre praktische Hilfe bei der 
+                        Autoreparatur zeigen ihre Unabhängigkeit und Kompetenz.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Gemeinsames Essen</h3>
+                        <p>Die Szene zeigt ihre Bildung und soziale Intelligenz, als sie 
+                        trotz ihrer Lebensumstände perfektes Hochdeutsch spricht und 
+                        kultivierte Umgangsformen zeigt.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Der Abschied</h3>
+                        <p>Ihr Versprechen an Maik, ihm zu schreiben, zeigt ihre emotionale 
+                        Tiefe und die Bedeutung der Begegnung für beide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Besondere Merkmale</h2>
+                <div class="additional-info">
+                    <h3>Bildung & Sprache</h3>
+                    <p>Trotz ihrer ungewöhnlichen Lebensumstände spricht Isa perfektes 
+                    Hochdeutsch und zeigt eine bemerkenswerte Bildung, was Fragen nach 
+                    ihrer Herkunft aufwirft.</p>
+
+                    <h3>Praktische Fähigkeiten</h3>
+                    <p>Sie verfügt über erstaunliche praktische Kenntnisse, von 
+                    Autoreparatur bis zu Überlebenstechniken, die ihr Selbstständigkeit 
+                    ermöglichen.</p>
+
+                    <h3>Soziale Intelligenz</h3>
+                    <p>Isa versteht es, Menschen einzuschätzen und auf sie einzugehen, 
+                    was sich in ihrem Umgang mit Maik und Tschick zeigt.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Einfluss auf die Hauptfiguren</h2>
+                <div class="relationships">
+                    <h3>Beziehung zu Maik</h3>
+                    <p>Für Maik ist sie die erste "echte" Begegnung mit einem Mädchen, 
+                    die über seine idealisierte Schwärmerei für Tatjana hinausgeht.</p>
+
+                    <h3>Wirkung auf beide Jungen</h3>
+                    <p>Ihre Unabhängigkeit und Stärke beeindrucken beide Jungen und 
+                    zeigen ihnen eine alternative Lebensweise jenseits gesellschaftlicher 
+                    Normen.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Markante Zitate</h2>
+                <div class="quote-container">
+                    <div class="quote">
+                        "Ihr seid die größten Versager, die ich je gesehen habe. Aber nett."
+                    </div>
+                    <div class="quote">
+                        "Manchmal ist es besser, wenn man nicht alles weiß."
+                    </div>
+                    <div class="quote">
+                        "Ich schreib dir. Ehrenwort."
+                    </div>
+                    <div class="quote">
+                        "Ihr seid ja völlig bescheuert. Aber sympathisch."
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Charaktereigenschaften</h2>
+                <ul class="traits-list">
+                    <li>Unabhängig und stark</li>
+                    <li>Geheimnisvoll</li>
+                    <li>Intelligent und gebildet</li>
+                    <li>Pragmatisch</li>
+                    <li>Überlebensfähig</li>
+                    <li>Direkt und ehrlich</li>
+                    <li>Selbstbewusst</li>
+                    <li>Unkonventionell</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Schlüsselmomente</h2>
+                <div class="story-moments">
+                    <h3>Die erste Begegnung</h3>
+                    <p>Isa taucht überraschend auf der Müllhalde auf und hilft den Jungen 
+                    bei der Reparatur ihres Autos.</p>
+
+                    <h3>Das gemeinsame Abenteuer</h3>
+                    <p>Sie verbringt einige Zeit mit Maik und Tschick, wobei sie ihre 
+                    praktischen Fähigkeiten und ihre Lebensweisheit zeigt.</p>
+
+                    <h3>Der Abschied</h3>
+                    <p>Ihr Versprechen an Maik, ihm zu schreiben, deutet eine emotionale 
+                    Verbindung an, die über die zufällige Begegnung hinausgeht.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Bedeutung für die Geschichte</h2>
+                <p>Isa ist eine Schlüsselfigur, die den beiden Jungen eine völlig neue 
+                Perspektive auf das Leben eröffnet. Sie zeigt ihnen, dass man auch 
+                außerhalb gesellschaftlicher Normen ein selbstbestimmtes Leben führen 
+                kann. Für Maik ist sie zudem die erste weibliche Figur, die ihm echte 
+                Aufmerksamkeit schenkt und ihn als Person wahrnimmt. Ihre Begegnung 
+                trägt wesentlich zu seiner Charakterentwicklung bei.</p>
+            </div>
+
+            <div class="section" style="text-align: center;">
+                <a href="tsick.html" class="nav-button">Zurück zur Hauptseite</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
